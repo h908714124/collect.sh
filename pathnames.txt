@@ -1,0 +1,12 @@
+bin
+Documents
+.emacs.d/init.el
+.irssi/config
+.gitconfig
+.ssh
+.bashrc
+.bash_history
+.config
+.nanorc
+/etc/hosts
+
