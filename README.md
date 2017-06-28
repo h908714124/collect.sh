@@ -1,2 +1,3 @@
 # collect.sh
-Linux backup script
+
+Simple linux backup tool
