@@ -49,20 +49,20 @@ function performBackup {
   fi
 }
 
-# Backup dir must be specified
-if [[ $# -ne 1 ]]; then
-  echo "Argument: backup dir"
-  exit
+REL_TARGET="$1"
+
+if [[ "$REL_TARGET" = "" ]]; then
+  REL_TARGET="/tmp/$(date +%Y%m%d)"
 fi
 
 # Configuration must exist
 touch $CONF_PATHNAMES || exit 1
 
 # Make backup dir, fail if exists
-mkdir $1 || exit 1
+mkdir "$REL_TARGET" || exit 1
 
 # Absolute path
-BACKUP_DIR=`cd $1; pwd`
+BACKUP_DIR=`cd "$REL_TARGET"; pwd`
 
 echo "Using backup dir: $BACKUP_DIR"
 
